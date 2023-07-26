@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: AGPL-3.0-only
-pragma solidity 0.8.10;
+pragma solidity 0.8.19;
 
 import {DSTestPlus} from "solmate/test/utils/DSTestPlus.sol";
 import {MockERC20} from "solmate/test/utils/mocks/MockERC20.sol";
@@ -68,9 +68,9 @@ contract FlywheelTest is DSTestPlus {
         flywheel.setFlywheelRewards(IFlywheelRewards(address(1)));
     }
 
-    function testSetFlywheelBooster(IFlywheelBooster booster) public {
-        flywheel.setBooster(booster);
-        require(flywheel.flywheelBooster() == booster);
+    function testSetFlywheelBooster(IFlywheelBooster _booster) public {
+        flywheel.setBooster(_booster);
+        require(flywheel.flywheelBooster() == _booster);
     }
 
     function testSetFlywheelBoosterUnauthorized() public {
